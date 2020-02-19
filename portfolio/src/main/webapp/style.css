@@ -1,9 +1,38 @@
 #content {
-  margin-left: auto;
-  margin-right: auto;
+  text-align: left;
+  margin-left: 80px;
   width: 650px;
+  color: black;
+  font-size: large;
+}
+#header {
+    font-size: 130%;
 }
 
-#greeting-container {
-  margin-top: 20px;
+#desc {
+    margin-top: 60px;
+    margin-left: 300px;
+    font-size: 180%;
+}
+
+pre {
+    margin-top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #e8eaeb;
+}
+
+sub {
+  vertical-align: sub;
+  font-size: 10px;
+}
+
+.resize {
+    background-color: #ff816b;
+    max-width: 40%;
+    max-height: 40%; 
+    float: left;
 }

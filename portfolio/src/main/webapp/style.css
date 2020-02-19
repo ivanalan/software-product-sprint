@@ -1,6 +1,7 @@
 #content {
-  text-align: left;
-  margin-left: 80px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
   width: 650px;
   color: black;
   font-size: large;
@@ -9,8 +10,20 @@
     font-size: 130%;
 }
 
+#button_greeting {
+    margin-left: 180px;
+    text-align: center;
+    float: left;
+}
+
+#greeting-container {
+    margin-left: 20px;
+    float: left;
+    text-align: center;
+}
+
 #desc {
-    margin-top: 60px;
+    margin-top: 40px;
     margin-left: 300px;
     font-size: 180%;
 }

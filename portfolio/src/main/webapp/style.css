@@ -49,3 +49,8 @@ sub {
     max-height: 40%; 
     float: left;
 }
+
+.resizeProjects {
+    max-width: 31%;
+    max-height: 31%;
+}

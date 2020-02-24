@@ -17,7 +17,10 @@
  */
 function addRandomGreeting() {
   const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+      ['Interstellar', 'Whiplash', 'Moonlight', 'Her', 
+      'Mr. Happy', 'Guava Island', 'Kikis Delivery Service',
+      'Pulp Fiction', 'Wall-E', 'Shutter Island', 'The Green Book',
+      'Life of Pi', 'Guardians of the Galaxy', 'Bohemian Rhapsody'];
 
   // Pick a random greeting.
   const greeting = greetings[Math.floor(Math.random() * greetings.length)];

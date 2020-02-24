@@ -2,17 +2,29 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <title>Alan's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
   <body>
     <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+        <div id="header">
+            <h1>Hi, I'm Alan Matias <sub>  ( and this is my portfolio )</sub></h1>
+        </div>
+        <img class="resize" src="images/profile.png" alt="profile picture">
+
+        <div id="desc">
+        <p>I am a <b>designer</b></p>
+        <p> and <b>film enthusiast</b></p>
+        <p>studying <b>CS</b> at Georgia Tech</p>
+        </div>
+
+        <pre><a href="projects.html">Look at my projects </a>      or       <a href="bio.html">Learn more about me</a>
+        </pre>
+
+        <p style="margin-top: 35px">Click below to find out what some of my favorite movies are:</p>
+        <button id="button_greeting" onclick="addRandomGreeting()">Favorite movies:</button>
+        <div id="greeting-container"></div>
     </div>
   </body>
 </html>

@@ -6,6 +6,7 @@
   color: black;
   font-size: large;
 }
+
 #header {
     font-size: 130%;
 }
@@ -53,4 +54,8 @@ sub {
 .resizeProjects {
     max-width: 31%;
     max-height: 31%;
+}
+
+#quote-container {
+  margin-top: 20px;
 }

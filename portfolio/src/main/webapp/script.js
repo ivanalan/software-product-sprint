@@ -32,8 +32,9 @@ function addRandomGreeting() {
 
   //fetch /data server
   function getData() {
-  fetch('/data').then(response => response.text()).then((data) => {
-    document.getElementById('data-container').innerText = data;
+      console.log('Fetching Json String')
+      fetch('/data').then(response => response.text()).then((data) => {
+          document.getElementById('data-container').innerText = data;
   });
 }
 

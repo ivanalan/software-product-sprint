@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Comments</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+  <body onload="getData()">
+    <div id="content">
+      <h1>Comments:</h1>
+
+      <!-- Comments Data -->
+      <ul id="data-container"></ul>
+
+      <br></br>
+
+      <!-- Leave a comment -->
+      <form action="/data" method="POST">
+        <p style="margin-top:100px">Leave a comment on my page!</p>
+        <textarea name="text-input">Hi Alan!</textarea>
+        <br/><br/>
+        <input type="submit"/>
+      </form>
+
+      <br></br>
+      <a href="index.html">Click here to go back to my home page!</a>
+      
+    </div>
+  </body>
+</html>

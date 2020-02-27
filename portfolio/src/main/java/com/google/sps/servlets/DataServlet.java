@@ -26,23 +26,25 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
     
-  //private ArrayList<String> hardCodedStrings = new ArrayList<>();
+  private ArrayList<String> commentStrings = new ArrayList<>();
   
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    //response.setContentType("text/html;");
-    //response.getWriter().println("Hello Alan!");
-    
-    ArrayList<String> hardCodedStrings = new ArrayList<>();
-    hardCodedStrings.add("Test");
-    hardCodedStrings.add("Foo");
-    hardCodedStrings.add("hello");
-
-    Gson gson = new Gson();
-    String json = gson.toJson(hardCodedStrings);
-
     response.setContentType("application/json;");
+    String json = new Gson().toJson(commentStrings);
     response.getWriter().println(json);
-    
+  }
+
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    // Get the input from the form.
+    String text = request.getParameter("text-input");
+    commentStrings.add(text);
+
+    // Respond with the result.
+    response.setContentType("text/html;");
+    response.getWriter().println(text);
+
+    response.sendRedirect("/comments.html");
   }
 }

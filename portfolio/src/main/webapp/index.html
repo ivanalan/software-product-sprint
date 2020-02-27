@@ -7,7 +7,7 @@
     <script src="script.js"></script>
   </head>
   <body>
-    <div id="content">
+    <div id="content" onload="getData()">
         <div id="header">
             <h1>Hi, I'm Alan Matias <sub>  ( and this is my portfolio )</sub></h1>
         </div>
@@ -21,15 +21,14 @@
 
         <pre><a href="projects.html">Look at my projects </a>      or       <a href="bio.html">Learn more about me</a>
         </pre>
+        <a href="comments.html">Leave a comment!</a>
 
+        <!-- Display a random movie -->
         <p style="margin-top: 35px">Click below to find out what some of my favorite movies are:</p>
         <button id="button_greeting" onclick="addRandomGreeting()">Favorite movies:</button>
         <div id="greeting-container"></div>
 
-        <br style="clear: both;" />        
-        <button onclick="getData()" style="margin-top: 10px; float: left; margin-left: 180px">Fetch a message:</button>
-        <div style="margin-top: 10px" id="data-container"></div>
-        
+        <br style="clear: both;" />
     </div>
   </body>
 </html>

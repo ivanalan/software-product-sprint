@@ -33,8 +33,22 @@ function addRandomGreeting() {
   //fetch /data server
   function getData() {
       console.log('Fetching Json String')
-      fetch('/data').then(response => response.text()).then((data) => {
-          document.getElementById('data-container').innerText = data;
+      fetch('/data').then(response => response.json()).then((data) => {
+        //   document.getElementById('data-container').innerText = data;
+
+          // Build the list of comments
+          const commentsEl = document.getElementById('data-container');
+          data.forEach((line) => {
+          commentsEl.appendChild(createListElement(line));
+          });
   });
 }
+
+// Creates an <li> element containing text.
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
+}
+
 

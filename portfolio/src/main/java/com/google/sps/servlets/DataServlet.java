@@ -14,7 +14,9 @@
 
 package com.google.sps.servlets;
 
-
+import com.google.cloud.language.v1.Document;
+import com.google.cloud.language.v1.LanguageServiceClient;
+import com.google.cloud.language.v1.Sentiment;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
@@ -52,8 +54,6 @@ public class DataServlet extends HttpServlet {
     Gson gson = new Gson();
     response.setContentType("application/json;");
     response.getWriter().println(gson.toJson(commentList));
-    // String json = new Gson().toJson(commentStrings);
-    // response.getWriter().println(json);
   }
 
   @Override
@@ -61,6 +61,16 @@ public class DataServlet extends HttpServlet {
     // Get the input from the form.
     String text = request.getParameter("text-input");
     commentStrings.add(text);
+
+    //calculate sentiment
+    Document doc =
+        Document.newBuilder().setContent(text).setType(Document.Type.PLAIN_TEXT).build();
+    LanguageServiceClient languageService = LanguageServiceClient.create();
+    Sentiment sentiment = languageService.analyzeSentiment(doc).getDocumentSentiment();
+    float score = sentiment.getScore();
+    languageService.close();
+
+    System.out.println(score);
 
     //Datastore
     Entity commentEntity = new Entity("Text");

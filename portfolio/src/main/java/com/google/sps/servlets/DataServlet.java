@@ -48,6 +48,12 @@ public class DataServlet extends HttpServlet {
     List<String> commentList = new ArrayList<>();
     for (Entity entity : results.asIterable()) {
         String comment = (String) entity.getProperty("Comment");
+
+        //add sentiment score
+        if(entity.getProperty("SentimentScore") != null) {
+            double commentSentiment = (double) entity.getProperty("SentimentScore");
+            comment += String.format(" (Sentiment Score: %.2f )", commentSentiment);;
+        }
         commentList.add(comment);
     }
 
@@ -75,6 +81,7 @@ public class DataServlet extends HttpServlet {
     //Datastore
     Entity commentEntity = new Entity("Text");
     commentEntity.setProperty("Comment", text);
+    commentEntity.setProperty("SentimentScore", score);
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     datastore.put(commentEntity);
     

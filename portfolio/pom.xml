@@ -24,6 +24,12 @@
       <version>4.0.1</version>
       <scope>provided</scope>
     </dependency>
+    
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-language</artifactId>
+      <version>1.55.0</version>
+    </dependency>
 
     <dependency>
     <groupId>com.google.code.gson</groupId>
@@ -32,10 +38,11 @@
     </dependency>
 
     <dependency>
-    <groupId>com.google.appengine</groupId>
-    <artifactId>appengine-api-1.0-sdk</artifactId>
-    <version>1.9.59</version>
-</dependency>
+      <groupId>com.google.appengine</groupId>
+      <artifactId>appengine-api-1.0-sdk</artifactId>
+      <version>1.9.59</version>
+    </dependency>
+    
   </dependencies>
 
   <build>
